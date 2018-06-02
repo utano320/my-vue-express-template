@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "start": "babel-node src/server/index.js"
+    "start": "babel-node src/server/index.js",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0"
   }
 }
