@@ -1,12 +1,20 @@
 {
   "scripts": {
-    "start": "babel-node src/server/index.js",
-    "test": "jest"
+    "start": "nodemon -e .vue,.js --ignore lib,files --exec babel-node src/server/index.js",
+    "test": "jest",
+    "dev:wds": "webpack-dev-server --progress"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
-    "jest": "^23.1.0"
+    "css-loader": "^0.28.11",
+    "jest": "^23.1.0",
+    "vue-loader": "^15.2.4",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "express": "^4.16.3"
