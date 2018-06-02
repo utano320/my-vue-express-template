@@ -1,3 +1,10 @@
-import hello from "./hello";
+import express from "express";
+import renderApp from "./renderApp";
 
-console.log(hello());
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send(renderApp());
+});
+
+app.listen(3000, () => console.log("Listening on port 3000..."));
