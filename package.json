@@ -2,17 +2,41 @@
   "scripts": {
     "start": "nodemon -e .vue,.js --ignore lib,files --exec babel-node src/server/index.js",
     "test": "jest",
-    "dev:wds": "webpack-dev-server --progress"
+    "dev:wds": "webpack-dev-server --progress",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "moduleFileExtensions": ["js", "json", "vue"],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-serializer-vue"],
+    "collectCoverage": true,
+    "collectCoverageFrom": ["pages/**/*.{js,vue}", "!**/node_modules/**"]
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.16",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
     "jest": "^23.1.0",
+    "jest-serializer-vue": "^2.0.0",
     "node-sass": "^4.9.0",
+    "prettier": "^1.13.4",
     "sass-loader": "^7.0.2",
+    "vue-jest": "^2.6.0",
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.10.2",
