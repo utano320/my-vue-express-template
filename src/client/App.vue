@@ -1,6 +1,7 @@
 <template>
   <div class="example">
     <p>{{ msg }}</p>
+    <p>API HOST : {{ apiHost }}</p>
   </div>
 </template>
 
@@ -8,7 +9,8 @@
 export default {
   data() {
     return {
-      msg: "Hello webpack!!!"
+      msg: 'Hello webpack!!!',
+      apiHost: process.env.API_HOST
     };
   }
 };
